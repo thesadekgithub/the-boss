@@ -23,7 +23,8 @@ int main() {
 
 // Function to calculate factorial
 
-long long calculateFactorial(int n) { 
+long long calculateFactorial(int n)
+ { 
 
     if (n == 0 || n == 1) {
 

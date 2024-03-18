@@ -1,44 +1,32 @@
 #include <stdio.h>
 
-// Function prototype
-long long calculateFactorial(int n);
+// Function declaration
+double calculateRectangleArea(double length, double width);
 
-int main() {
+int main()
+{
+    // Variables to store user input
+    double length, width;
 
-    int number;
+    // Get user input for length
+    printf("Enter the length of the rectangle: ");
+    scanf("%lf", &length);
 
-    printf("Enter a number: ");
+    // Get user input for width
+    printf("Enter the width of the rectangle: ");
+    scanf("%lf", &width);
 
-    scanf("%d", &number);
+    // Calculate the area using the function
+    double area = calculateRectangleArea(length, width);
 
-
-    // Calculate and display factorial
-
-    long long result = calculateFactorial(number);
-
-    printf("Factorial of %d = %lld\n", number, result);
+    // Display the result
+    printf("The area of the rectangle is: %.2f\n", area);
 
     return 0;
 }
 
-// Function to calculate factorial
-
-long long calculateFactorial(int n)
- { 
-
-    if (n == 0 || n == 1) {
-
-        return 1;
-
-    } else {
-
-        long long result = 1;
-
-        for (int i = 2; i <= n; ++i) {
-
-            result *= i;
-        }
-        
-        return result;
-    }
+// Function definition
+double calculateRectangleArea(double length, double width)
+{
+    return length * width;
 }

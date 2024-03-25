@@ -1,37 +1,47 @@
+// convert binary to decimal
+
 #include <stdio.h>
+#include <math.h>
 
-   int CalculateFactoral(int);
+// function prototype
+int convert(long long);
 
-int main(){
+int main()
+{
 
-   int n ;
+   long long n;
 
-   printf("Enter a positive number :");
+   printf("Enter a binary number: ");
+   scanf("%lld", &n);
 
-   scanf("%d" , &n);
-   
-   long long result = CalculateFactoral(n);
+   printf("%lld in binary = %d in decimal", n, convert(n));
 
-   printf("The factoral of %d is  %lld" , n , result);
-
-    return 0 ;
-
+   return 0;
 }
-   int CalculateFactoral(int n){
 
-          if(n == 0 || n == 1){
+// function definition
+  int convert(long long n)
 
-          return 1 ;
-          }else{
+{
 
-          long long result = 1 ;
-        
-            for (int i = 2 ; i <= n ; i++){
+   int dec = 0, i = 0, rem;
 
-                result = result * i ;
-            }
-                      return result ;
+   while (n != 0)
+   {
 
-          }
- // re = 2 * 1 = 2 // 2 * 3 = 6 // 6 * 4 = 24 
+      // get remainder of n divided by 10
+    rem = n % 10;
+
+      // divide n by 10
+      n /= 10;
+
+      // multiply rem by (2 ^ i)
+      // add the product to dec
+      dec += rem * pow(2, i);
+
+      // increment i
+      ++i;
    }
+
+   return dec;
+}

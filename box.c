@@ -10,7 +10,6 @@ int main()
 {
 
    long long n;
-
    printf("Enter a binary number: ");
    scanf("%lld", &n);
 
